@@ -10,7 +10,10 @@
 <meta property="og:image" content="https://YOUR-USERNAME.github.io/appa-60/preview.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}.sri{font-family:"Mukta Malar","Noto Sans Tamil",sans-serif}
+.noon{background:var(--kumkum);color:var(--jasmine);padding:1px 8px;border-radius:999px;font-weight:700;white-space:nowrap}
+.timeline .t .noon{font-size:12px;display:inline-block;margin-top:3px}
+</style>
 <title>Narayanasamy Shashtiabdapoorthi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,6 +88,11 @@ main{max-width:720px;margin:0 auto;position:relative;z-index:2;display:flex;flex
 .couple .names-en{font-size:15px;letter-spacing:.04em}
 .amp{font-family:var(--display);color:var(--brass);font-size:22px;line-height:1}
 
+.deity{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.perumal{width:100%;max-width:560px;height:auto;border-radius:3px;box-shadow:0 6px 18px rgba(80,40,0,.25);position:relative}
+.hero-img{max-width:440px;margin-top:6px}
+.deity .cap{margin:0;font-family:var(--display);font-size:20px;font-weight:700;color:var(--kumkum);position:relative}
+.deity .cap small{display:block;font-family:var(--body);font-size:13.5px;font-weight:400;color:var(--ink-soft)}
 .greet{position:relative;text-align:center;font-size:15px}
 .greet .to{font-family:var(--display);font-size:20px;color:var(--kumkum);font-weight:600}
 .greet p{margin:6px auto 0;max-width:56ch}
@@ -116,7 +124,7 @@ main{max-width:720px;margin:0 auto;position:relative;z-index:2;display:flex;flex
 
 /* Schedule */
 .timeline{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
-.timeline li{display:grid;grid-template-columns:86px 1fr;gap:14px;align-items:start}
+.timeline li{display:grid;grid-template-columns:104px 1fr;gap:14px;align-items:start}
 .timeline .t{font-family:var(--display);font-weight:700;font-size:18px;color:var(--kumkum);font-variant-numeric:tabular-nums;text-align:right;line-height:1.3}
 .timeline .t small{display:block;font-family:var(--body);font-size:11px;color:var(--ink-soft);font-weight:400}
 .timeline .e{border-left:2px solid var(--brass);padding-left:14px;min-width:0}
@@ -138,6 +146,8 @@ main{max-width:720px;margin:0 auto;position:relative;z-index:2;display:flex;flex
 .family h3{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);font-family:var(--body);font-weight:700;margin-bottom:4px}
 .family p{margin:0;font-family:var(--display);font-size:18px;font-weight:600}
 .family p small{display:block;font-family:var(--body);font-size:13.5px;font-weight:400;color:var(--ink-soft)}
+.family .vin{display:flex;justify-content:center}
+.vin-img{width:180px;max-width:60%;height:auto}
 .family .full{grid-column:1/-1}
 @media (max-width:480px){.family{grid-template-columns:1fr}}
 .request{font-size:15px;margin:0 0 18px;padding-bottom:16px;border-bottom:1px dashed rgba(29,90,55,.35)}
@@ -158,6 +168,7 @@ details.hosts summary{cursor:pointer;font-weight:700}
 .hint{font-size:13px;color:var(--ink-soft);margin:6px 0 0}
 
 footer{text-align:center;font-size:13px;color:var(--ink-soft);margin-top:8px}
+footer .ty{font-family:var(--display);color:var(--kumkum);font-size:19px;font-weight:700;margin-bottom:2px}
 footer .u{font-family:var(--display);color:var(--kumkum);font-size:18px}
 
 /* Envelope intro */
@@ -204,12 +215,12 @@ footer .u{font-family:var(--display);color:var(--kumkum);font-size:18px}
   <section class="card hero" aria-labelledby="t">
     <svg class="kolam" id="kolam" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
     <div class="invoke" style="width:100%;position:relative">
-      <div><small>ஸ்ரீ வெங்கடாஜலபதி துணை</small></div>
-      <div class="mid"><span class="u">உ</span><small>ஸ்ரீ ராமஜெயம்</small></div>
-      <div><small>பரவாக்கரை ஸ்ரீ மஹாமாரியம்மன் துணை</small></div>
+      <div><small><span class="sri">ஸ்ரீ</span> வெங்கடாஜலபதி துணை</small></div>
+      <div class="mid"><span class="u">உ</span><small><span class="sri">ஸ்ரீ</span> ராமஜெயம்</small></div>
+      <div><small>பரவாக்கரை <span class="sri">ஸ்ரீ</span> மஹாமாரியம்மன் துணை</small></div>
     </div>
 
-    <img class="lamp ganesha" src="vinayakar.png" width="640" height="640" alt="Vinayakar">
+    <img class="lamp" src="vinayakar.png" width="640" height="640" alt="Vinayakar">
 
 
     <div class="eyebrow" style="position:relative">Shashtiabdapoorthi Shanti · 60 years</div>
@@ -217,16 +228,18 @@ footer .u{font-family:var(--display);color:var(--kumkum);font-size:18px}
     <p class="title-en" style="position:relative;margin:0">A full turn of the 60-year Tamil calendar, celebrated with Shanti homam and Mangalya Dharanam.</p>
 
     <div class="couple" style="position:relative">
-      <div class="names">ஸ்ரீமான் G. நாராயணசாமி</div>
+      <div class="names"><span class="sri">ஸ்ரீ</span>மான் G. நாராயணசாமி</div>
       <div class="amp">&amp;</div>
-      <div class="names">ஸ்ரீமதி N. அனுஷாதேவி</div>
+      <div class="names"><span class="sri">ஸ்ரீ</span>மதி N. அனுஷாதேவி</div>
       <div class="names-en">Sri G. Narayanasamy &amp; Smt. N. Anushadevi</div>
     </div>
   </section>
 
+
+
   <!-- Personal greeting -->
   <section class="card greet">
-    <div class="to">மஹா-ராஜ-ராஜ-ஸ்ரீ <span id="guestTa">அன்புள்ள உறவினர்கள்</span> அவர்களுக்கு</div>
+    <div class="to">மஹா-ராஜ-ராஜ-<span class="sri">ஸ்ரீ</span> <span id="guestTa">அன்புள்ள உறவினர்கள்</span> அவர்களுக்கு</div>
     <p>அநேக நமஸ்காரம் / ஆசீர்வாதம் / உபயக்ஷேமம்.</p>
     <p>Dear <b id="guestEn">family and friends</b>, with our namaskarams, we warmly invite you to bless our parents on this auspicious day.</p>
   </section>
@@ -254,7 +267,7 @@ footer .u{font-family:var(--display);color:var(--kumkum);font-size:18px}
       <div><dt>Nakshatram</dt><dd>உத்திராஷாடா<small>Uthiradam</small></dd></div>
       <div><dt>Yogam</dt><dd>அம்ருதயோகம்<small>Amritha Yogam</small></dd></div>
       <div><dt>Lagnam</dt><dd>மகர லக்னம்<small>Makara Lagnam</small></dd></div>
-      <div style="grid-column:1/-1"><dt>Udayadi Nazhigai</dt><dd>12.05 க்குமேல் 14.30 நாழிகைக்குள்<small>Between 12.05 and 14.30 nazhigai after sunrise · 11:00 AM to 12:00 noon</small></dd></div>
+      <div style="grid-column:1/-1"><dt>Udayadi Nazhigai</dt><dd>12.05 க்குமேல் 14.30 நாழிகைக்குள்<small>Between 12.05 and 14.30 nazhigai after sunrise · 11:00 AM to 12:00 Noon</small></dd></div>
     </dl>
   </section>
 
@@ -263,7 +276,7 @@ footer .u{font-family:var(--display);color:var(--kumkum);font-size:18px}
     <div class="sec-h"><h2>நிகழ்ச்சி நிரல்</h2><span>Order of the day</span></div>
     <ol class="timeline">
       <li><div class="t">5:00<small>AM onwards</small></div><div class="e"><strong>ருத்ர ஏகாதசி</strong><span>Rudra Ekadasi</span></div></li>
-      <li><div class="t">11:00<small>to 12:00 noon</small></div><div class="e"><strong>ஷஷ்டியப்தபூர்த்தி சாந்தி சுபமுஹூர்த்தம்</strong><span>Shashtiabdapoorthi Shanti muhurtham, with Mangalya Dharanam for our mother</span></div></li>
+      <li><div class="t">11:00<small>to</small>12:00<small>Noon</small></div><div class="e"><strong>ஷஷ்டியப்தபூர்த்தி சாந்தி சுபமுஹூர்த்தம்</strong><span>Shashtiabdapoorthi Shanti muhurtham, with Mangalya Dharanam for our mother</span></div></li>
     </ol>
   </section>
 
@@ -282,10 +295,10 @@ footer .u{font-family:var(--display);color:var(--kumkum);font-size:18px}
 
   <!-- Family -->
   <section class="card">
-    <p class="request">எங்கள் குலதெய்வத்தின் க்ருபையாலும் ஸ்ரீ மஹாத்ரிபுரசுந்தரி சமேத ஸ்ரீ சந்திரமௌளீஸ்வர ஸ்வாமி க்ருபையாலும் ஸ்ரீ காஞ்சி காமகோடி பீடாதிபதி ஜகத்குரு ஸ்ரீ சந்திரசேகரேந்திர சரஸ்வதி ஸ்வாமிகளின் அனுக்ரஹத்துடனும் பெரியோர்களின் ஆசீர்வாதத்துடனும், தாங்கள் தங்கள் இஷ்டமித்ர பந்துக்களுடன் முன்னதாகவே வந்திருந்து சுபமுஹூர்த்தத்தை நடத்திவைத்து தம்பதிகளை ஆசீர்வதித்து எங்களையும் கௌரவிக்க வேண்டுமாய் கேட்டுக் கொள்கிறோம்.
+    <p class="request">எங்கள் குலதெய்வத்தின் க்ருபையாலும் <span class="sri">ஸ்ரீ</span> மஹாத்ரிபுரசுந்தரி சமேத <span class="sri">ஸ்ரீ</span> சந்திரமௌளீஸ்வர ஸ்வாமி க்ருபையாலும் <span class="sri">ஸ்ரீ</span> காஞ்சி காமகோடி பீடாதிபதி ஜகத்குரு <span class="sri">ஸ்ரீ</span> சந்திரசேகரேந்திர சரஸ்வதி ஸ்வாமிகளின் அனுக்ரஹத்துடனும் பெரியோர்களின் ஆசீர்வாதத்துடனும், தாங்கள் தங்கள் இஷ்டமித்ர பந்துக்களுடன் முன்னதாகவே வந்திருந்து சுபமுஹூர்த்தத்தை நடத்திவைத்து தம்பதிகளை ஆசீர்வதித்து எங்களையும் கௌரவிக்க வேண்டுமாய் கேட்டுக் கொள்கிறோம்.
       <em>By the grace of our family deity and the blessings of the elders, we request you to come early with family and friends, bless the couple, and honour us with your presence.</em></p>
     <div class="family">
-      <div class="blk full"><h3>Son of</h3><p>பேரளம் (ஸ்வர்கீய) R. கணேச ஐயர் – சகுந்தலா<small>Sri G. Narayanasamy is the youngest son of the late R. Ganesa Iyer and Sakunthala of Peralam</small></p></div>
+      
       <div class="blk"><h3>இப்படிக்கு · With love</h3><p>N. ராம்சந்த் – திவ்யப்ரியா<small>N. Ramchandh &amp; Divya Preya</small></p><p style="margin-top:6px">N. புவனேஸ்வரி<small>N. Bhuvaneshwari</small></p></div>
       <div class="blk"><h3>அவ்வண்ணமே கோரும் · Also inviting</h3><p>G. சுயம்பு – உஷா சுயம்பு<small>G. Swayambu &amp; Usha Swayambu</small></p></div>
       <div class="blk full"><h3>பேரன் · Grandson</h3><p>மாஸ்டர் துருவ் விஸ்வேஷ்<small>Master Dhruv Vishvesh, who can't wait to see you there</small></p></div>
@@ -326,7 +339,7 @@ footer .u{font-family:var(--display);color:var(--kumkum);font-size:18px}
     </div>
   </details>
 
-  <footer><div class="u">உ</div>With blessings, the Narayanasamy family</footer>
+  <footer><div class="ty">உங்கள் வருகையை அன்புடன் எதிர்நோக்குகிறோம்</div>We look forward to your presence</footer>
 </main>
 
 <script>
