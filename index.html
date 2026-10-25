@@ -151,6 +151,7 @@ details.hosts{background:rgba(255,244,184,.6);border-radius:8px;padding:14px 18p
 details.hosts summary{cursor:pointer;font-weight:700}
 .gen{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
 .gen input{flex:1 1 220px;min-width:0;padding:10px 12px;border-radius:8px;border:1.5px solid var(--ink-soft);font:15px var(--body);background:var(--jasmine);color:var(--ink)}
+.fam-tick{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:14.5px;cursor:pointer}.fam-tick input{width:18px;height:18px;accent-color:var(--ink)}
 .out{margin-top:10px;word-break:break-all;font-size:13.5px;background:var(--jasmine);padding:8px 10px;border-radius:6px}
 .hint{font-size:13px;color:var(--ink-soft);margin:6px 0 0}
 
@@ -184,7 +185,7 @@ footer .u{font-family:var(--display);color:var(--kumkum);font-size:18px}
 <canvas id="petals" aria-hidden="true"></canvas>
 
 <div id="intro" role="button" tabindex="0" aria-label="Open the invitation">
-  <div class="env-to"><small>Smt. &amp; Sri</small><b id="envName">You &amp; Family</b></div>
+  <div class="env-to"><small id="envLbl">Smt. &amp; Sri</small><b id="envName">You &amp; Family</b></div>
   <div class="env">
     <div class="back"></div>
     <div class="letter">ஷஷ்டியப்தபூர்த்தி சாந்தி</div>
@@ -319,12 +320,14 @@ footer .u{font-family:var(--display);color:var(--kumkum);font-size:18px}
   <!-- Hosts: personal links -->
   <details class="hosts">
     <summary>For the hosts: make a personal link for a guest</summary>
-    <p class="hint">Type the guest's name in English. Their name will appear on the envelope and greeting when they open the link.</p>
+    <p class="hint">Type the head of the family's name in English, for example "Ravi Kumar". Their name appears on the envelope and in the greeting when they open the link.</p>
     <div class="gen">
       <input id="guestInput" type="text" placeholder="e.g. Lakshmi and Ravi Kumar" autocomplete="off">
       <button class="btn primary" type="button" id="makeLink">Create link</button>
     </div>
+    <label class="fam-tick" for="addFamily"><input type="checkbox" id="addFamily" checked> Add "&amp; Family" after the name</label>
     <div id="genOut" hidden>
+      <p class="hint" id="seeAs"></p>
       <div class="out" id="linkText"></div>
       <div class="btns" style="margin-top:8px">
         <button class="btn" type="button" id="copyLink">Copy link</button>
@@ -344,11 +347,12 @@ footer .u{font-family:var(--display);color:var(--kumkum);font-size:18px}
   /* Guest name from #Name_Here */
   var raw = (location.hash || '').replace(/^#/, '');
   var guest = '';
-  try { guest = decodeURIComponent(raw).replace(/[_~-]+/g, ' ').trim(); } catch(e) {}
+  try { guest = decodeURIComponent(raw).replace(/~/g, ' & ').replace(/_+/g, ' ').replace(/\s+/g, ' ').trim(); } catch(e) {}
   if (guest && guest.length < 60) {
     document.getElementById('envName').textContent = guest;
     document.getElementById('guestTa').textContent = guest;
     document.getElementById('guestEn').textContent = guest;
+    if (/&\s*family$/i.test(guest)) document.getElementById('envLbl').textContent = 'To';
   }
 
   /* Envelope */
@@ -423,11 +427,14 @@ footer .u{font-family:var(--display);color:var(--kumkum);font-size:18px}
   /* Personal link generator */
   var lt = document.getElementById('linkText');
   document.getElementById('makeLink').addEventListener('click', function(){
-    var name = document.getElementById('guestInput').value.trim().replace(/\s+/g,'_').replace(/[^A-Za-z0-9._~-]/g,'');
+    var shown = document.getElementById('guestInput').value.trim().replace(/\s*&\s*family\s*$/i,'').replace(/\s+/g,' ');
+    if (shown && document.getElementById('addFamily').checked) shown += ' & Family';
+    var name = shown.replace(/\s*&\s*/g,'~').replace(/\s+/g,'_').replace(/[^A-Za-z0-9._~-]/g,'');
+    document.getElementById('seeAs').textContent = shown ? 'Guest will see: ' + shown.replace(/[^A-Za-z0-9.&\s-]/g,'') : 'No name entered, so the guest will see "You & Family".';
     var base = BASE_URL || location.href.split('#')[0];
     var url = base + (name ? '#' + name : '');
     lt.textContent = url;
-    var msg = 'Namaskaram! With joy we invite you to the Shashtiabdapoorthi Shanti of Sri G. Narayanasamy & Smt. N. Anushadevi on Sunday, 15 Nov 2026, 11 AM to 12 noon at Harihara Hall, Adyar. Please open your invitation: ' + url;
+    var msg = 'Namaskaram' + (shown ? ' ' + shown.replace(/[^A-Za-z0-9.&\s-]/g,'') : '') + '! With joy we invite you to the Shashtiabdapoorthi Shanti of Sri G. Narayanasamy & Smt. N. Anushadevi on Sunday, 15 Nov 2026, 11 AM to 12 noon at Harihara Hall, Adyar. Please open your invitation: ' + url;
     document.getElementById('waLink').href = 'https://wa.me/?text=' + encodeURIComponent(msg);
     document.getElementById('genOut').hidden = false;
   });
