@@ -318,7 +318,7 @@ footer .u{font-family:var(--display);color:var(--kumkum);font-size:18px}
   </section>
 
   <!-- Hosts: personal links -->
-  <details class="hosts">
+  <details class="hosts" id="hostsBox" hidden>
     <summary>For the hosts: make a personal link for a guest</summary>
     <p class="hint">Type the head of the family's name in English, for example "Ravi Kumar". Their name appears on the envelope and in the greeting when they open the link.</p>
     <div class="gen">
@@ -347,6 +347,8 @@ footer .u{font-family:var(--display);color:var(--kumkum);font-size:18px}
   /* Guest name from #Name_Here */
   var raw = (location.hash || '').replace(/^#/, '');
   var guest = '';
+  var isHost = raw.toLowerCase() === 'host';
+  if (isHost) { var hb = document.getElementById('hostsBox'); hb.hidden = false; hb.open = true; raw = ''; }
   try { guest = decodeURIComponent(raw).replace(/~/g, ' & ').replace(/_+/g, ' ').replace(/\s+/g, ' ').trim(); } catch(e) {}
   if (guest && guest.length < 60) {
     document.getElementById('envName').textContent = guest;
